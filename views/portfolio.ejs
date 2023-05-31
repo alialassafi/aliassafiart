@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”robots” content="index, follow">
+    <meta name="description"
+        content="Explore the awesome art that I made over the years. This page is my portfolio if you are looking to hire or just enjoy some art.">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+
+        <main>
+            <div class="section-begin">
+                <hr>
+                <h1 class="section-title">Portfolio</h1>
+                <hr>
+            </div>
+            <section class="gallery">
+                <div class="image-column column-left">
+                    <img src="artwork/3_TheGarden1.jpg" alt="The Garden">
+                    <img src="artwork/4_Village1.jpg" alt="The Village">
+                    <img src="artwork/7_AuroraDeath.jpg" alt="Aurora Death">
+                    <img src="artwork/9_EnteringTheShrine.jpg" alt="Entering The Shrine">
+                </div>
+                <div class="image-column column-middle">
+                    <img src="artwork/12_AuroraEavesdrop.jpg" alt="Aurora Eavesdrop">
+                    <img src="artwork/14_NikitaCloseBook.jpg" alt="Nikita Close Book">
+                    <img src="artwork/22_ZombieBlast.jpg" alt="Zombie Blast">
+                    <img src="artwork/32_MeetVaydar.jpg" alt="Meet Vaydar">
+                </div>
+                <div class="image-column column-right">
+                    <img src="artwork/33_ShipKraken.jpg" alt="Ship Kraken">
+                    <img src="artwork/34_KrakenElectricuted.jpg" alt="Kraken Electricuted">
+                    <img src="artwork/35_DragonRealm.jpg" alt="Dragon Realm">
+                    <img src="artwork/41_HikariDeath.jpg" alt="Kikari Death">
+                </div>
+            </section>
+        </main>
+
+
+        <%- include('partials/socialMedia.ejs') %>
+
+</body>
+<%- include('partials/footer.ejs') %>
+
+</html>

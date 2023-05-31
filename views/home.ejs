@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”robots” content="index, follow">
+    <meta name="description" content="Explore the awesome art, illustrated books and more from ALI ALASSAFI">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
+    <title>ALI ALSSAFI ART</title>
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+        <main>
+            <h2 class="welcome">Welcome To My Website!</h2>
+
+            <div class="showcase">
+                <div class="showcase-imgs">
+                    <img src="/artwork/4_Village1.jpg" alt="Kira Village">
+                </div>
+                <div class="showcase-text">
+                    <h3>Explore Art</h3>
+                    <p>Explore the artworks I have made over the years.</p>
+                    <a class="submit-button" href="/portfolio">See More</a>
+                </div>
+            </div>
+
+            <div class="showcase">
+                <div class="showcase-text">
+                    <h3>illustrated Novels</h3>
+                    <p>Take a look at my illustrated novels. The books are written and illustrated by me!</p>
+                    <a class="submit-button" href="/books">See More</a>
+                </div>
+                <div class="showcase-imgs">
+                    <img src="/images/Spell_Book_of_Kirashima.jpg" alt="Spell Book Of Kirashima">
+                </div>
+            </div>
+
+            <%- include('partials/socialMedia.ejs') %>
+                <hr>
+                <%- include('partials/emailSubscription.ejs') %>
+        </main>
+</body>
+<%- include('partials/footer.ejs') %>
+
+</html>

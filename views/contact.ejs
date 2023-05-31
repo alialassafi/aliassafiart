@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”robots” content="index, follow">
+    <meta name="description" content="Explore the awesome art, illustrated books and more from ALI ALASSAFI">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
+    <title>Contact Us</title>
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+        <main>
+            <h2 class="welcome">Contact Us</h2>
+            <h3 class="text-center">Don't hesitate to contact me with any questions or feedback.</h3>
+<div class="contact">
+    <h4>Rules:</h4>
+    <li class="note">Please Don't Contact To Promote Serivces or Products! Your Emails Will Either Be Ignored Or You Will Be Blacklisted.</li>
+    <li class="note">Please Respect Privacy And Don't Ask Personal Questions.</li>
+</div>
+      
+
+            <div class="contact">
+                <a href="mailto:support@aliassafiart.com" class="submit-button">Send Email</a>
+            </div>
+
+           
+
+            <%- include('partials/socialMedia.ejs') %>
+                <hr>
+                <%- include('partials/emailSubscription.ejs') %>
+        </main>
+</body>
+<%- include('partials/footer.ejs') %>
+
+</html>

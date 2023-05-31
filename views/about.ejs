@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”robots” content="index, follow">
+    <meta name="description"
+        content="I'm an artist and writer from Iraq. I started doing art in 2021 as a hobby, but then I decided to create an illustrated novel and self publish. I worked on my illustrated novel while learning art from professionals...">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
+    <title>About</title>
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="section-begin">
+            <hr>
+            <h1 class="section-title">About Me</h1>
+            <hr>
+        </div>
+
+        <section id="aboutme">
+            <img class="profile-pic" src="images/profile.jpeg" alt="Founder Photo">
+            
+                <div class="name-job">
+                    <h2>Hi! I'm Ali</h2>
+                    <h2>An Artist & A Writer</h2>
+                </div>
+                <div class="aboutme-p">
+                    <p>Hi there! I'm Ali from Iraq. I started doing art in 2021 as a hobby, but then I decided to create
+                        an
+                        illustrated novel and self publish. I worked on my illustrated novel while learning art from
+                        professionals. It took me roughly 2 years to finish. Now, my first book is published on various
+                        platforms online. I have worked on icon design, logo design, web design and illustration. My
+                        goal is
+                        to create new kind of stories, new kind of games and new ideas to imagine. I have finished
+                        playing
+                        the most interesting games, watching the best movies and TV shows. Since the stories now, are
+                        mostly
+                        the same as the previous ones, I want to create new stories that people can enjoy.</p>
+                </div>
+            </main>
+
+        </section>
+        
+        <%- include('partials/socialMedia.ejs') %>
+        <hr>
+        <%- include('partials/emailSubscription.ejs') %>
+
+</body>
+
+<%- include('partials/footer.ejs') %>
+
+</html>

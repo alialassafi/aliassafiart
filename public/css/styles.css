@@ -1,0 +1,598 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: Avenir, Montserrat, sans-serif;
+}
+
+body {
+    background-color: linen;
+}
+
+
+main {
+    grid-column: 2;
+    max-width: 75%;
+    margin: 1rem auto;
+}
+
+
+h1,
+h2,
+h3 {
+    text-align: inherit;
+    margin: 2rem auto;
+}
+
+h4,
+h5,
+h6 {
+    text-align: inherit;
+    margin: 1rem auto;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+hr {
+    grid-column: 2;
+    border: 0.1rem solid rgba(11, 23, 49, 0.8);
+    width: 40%;
+    margin: 4rem auto;
+    border-radius: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #0B1731;
+    font-weight: bold;
+}
+
+img {
+    pointer-events: none;
+}
+
+
+.divider-large {
+    margin-bottom: 8rem;
+}
+
+.divider-xlarge {
+    margin-bottom: 20rem;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+form {
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.note {
+    font-size: 0.9rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+li {
+    margin: 0.4rem;
+}
+
+/* -------------------------------- Header -------------------------------- */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar-container {
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr) minmax(min-content, 1fr);
+    width: 100%;
+    background-color: #0B1731;
+    color: #F0E6DC;
+}
+
+.nav-left {
+    grid-column: 1;
+    margin: auto 2rem;
+    text-align: left;
+}
+
+.logo {
+    grid-column: 2;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: 0.4rem auto;
+}
+
+.nav-right {
+    grid-column: 3;
+    text-align: right;
+    margin: auto 2rem;
+}
+
+.nav-item {
+    margin: auto 1rem;
+    text-decoration: none;
+    color: #F0E6DC;
+}
+
+/* -------------------------------- About -------------------------------- */
+
+#aboutme {
+    grid-column: 2;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 10fr) minmax(2rem, 1fr);
+}
+
+.profile-pic {
+    grid-column: 2;
+    max-width: 25%;
+    border-radius: 100%;
+    margin: 1rem auto;
+    border: 2px solid #0B1731;
+    filter: contrast(1.1);
+}
+
+.name-job {
+    grid-column: 2;
+    margin: 1rem auto;
+}
+
+.name-job h2 {
+    grid-column: 2;
+    margin: 0.2rem;
+    text-align: center;
+}
+
+.aboutme-p {
+    grid-column: 2;
+    margin: 2rem auto;
+    text-align: justify;
+}
+
+.follow-support {
+    text-align: center;
+    max-width: 100%;
+    margin: 2rem auto;
+}
+
+.mid-page-title {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.social-icons {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.social-link {
+    margin: 0 auto;
+}
+
+.social-icon {
+    color: #0B1731;
+    max-width: 2rem;
+    margin: 0.8rem;
+}
+
+/* -------------------------------- Home -------------------------------- */
+
+.welcome {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.welcome-p {
+    text-align: center;
+}
+
+.showcase {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4rem;
+    margin: 6rem;
+}
+/* 
+.showcase-imgs {
+    margin: 4rem;
+}
+
+.showcase-text {
+    margin: 4rem;
+} */
+
+.showcase img {
+    max-height: 18rem;
+    border-radius: 1rem;
+    filter: contrast(1.1);
+}
+
+/* -------------------------------- Portfolio -------------------------------- */
+
+.gallery {
+    display: grid;
+    margin-bottom: 8rem;
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr) minmax(min-content, 1fr);
+    gap: 0.6rem;
+}
+
+.image-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.column-left {
+    grid-column: 1;
+}
+
+.column-middle {
+    grid-column: 2;
+}
+
+.column-right {
+    grid-column: 3;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    /*trim to fit */
+    border-radius: 10px;
+    margin: 0.4rem;
+}
+
+
+/* -------------------------------- Projects -------------------------------- */
+
+.section-begin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    vertical-align: center;
+}
+
+.section-title {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.book-title {
+    margin-bottom: 1rem;
+}
+
+#spell-book-of-kirashima {
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr);
+    column-gap: 1rem;
+    margin: 4rem auto;
+}
+
+#spell-book-of-kirashima .author {
+    margin: 0.4rem auto;
+}
+
+.book-info {
+    grid-column: 2;
+    font-size: 1.2rem;
+    text-align: justify;
+    margin: 0 3rem;
+}
+
+.book-info p {
+    grid-column: 1;
+    margin-top: 2.4rem;
+}
+
+
+.image-buy {
+    grid-column: 1;
+    margin: 0 auto;
+}
+
+.cover-img {
+    grid-column: 1;
+    max-width: 420px;
+    border: 0.5rem solid #c39767;
+    margin-bottom: 1rem;
+}
+
+.series {
+    margin-bottom: 2rem;
+}
+
+.buy-container {
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr);
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftColumn {
+    grid-column: 1;
+}
+
+.rightColumn {
+    grid-column: 2;
+}
+
+.buy-button {
+    font-weight: bold;
+    text-decoration: none;
+    min-width: 12rem;
+    display: flex;
+    vertical-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    height: 4rem;
+    margin: 2rem auto;
+    border: 2px solid #0b1731;
+    color: #0b1731;
+    background-color: linen;
+    border-radius: 2rem 2rem 2rem 2rem;
+}
+
+.buy-button:hover {
+    border: 2px solid #0b1731;
+    color: linen;
+    background-color: #0b1731;
+    border-radius: 2rem 2rem 2rem 2rem;
+}
+
+
+@media only screen and (max-width: 700px) {
+
+    .book-title {
+        margin-top: 2.4rem;
+    }
+
+    .book-info {
+        font-size: 1.8rem;
+    }
+
+    #spell-book-of-kirashima {
+        grid-column: 2/3;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.8rem;
+    }
+
+    .buy-container {
+        grid-column: 2/3;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+/* -------------------------------- Buy Section -------------------------------- */
+
+.buy-heading {
+    text-align: center;
+}
+
+.buy-section {
+    grid-column: 2;
+    /* text-align: center; */
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr);
+}
+
+.buy-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    color: #0B1731;
+    margin: 2rem 30%;
+}
+
+.buy-icon {
+    color: #0B1731;
+    max-width: 3rem;
+    margin: auto 2rem;
+}
+
+/* -------------------------------- Footer -------------------------------- */
+
+footer {
+    background-color: #0B1731;
+    color: #F0E6DC;
+}
+
+.footer-containers {
+    display: grid;
+    grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 50%) minmax(min-content, 20%) minmax(2rem, 1fr);
+    row-gap: 3rem;
+    column-gap: 3rem;
+    padding-bottom: 2rem;
+}
+
+.about-website {
+    grid-column: 2;
+    margin: 0 2rem;
+}
+
+.about-website-title {
+    margin-bottom: 1rem;
+}
+
+.term-of-use {
+    display: grid;
+    grid-column: 3;
+    margin: 0 2rem;
+}
+
+.term-of-use-title {
+    margin-bottom: 1rem;
+}
+
+.term-of-use-link {
+    color: #F0E6DC;
+    text-decoration: none;
+    margin: 0.4rem;
+}
+
+.copyright {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+/* -------------------------------- /newsletter -------------------------------- */
+
+.emailSubRes {
+    margin-top: 14rem;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+}
+
+input:focus::placeholder {
+    color: transparent;
+    outline-style: none;
+}
+
+.form-input {
+    display: block;
+    margin: auto;
+    min-width: 40%;
+    max-width: 75%;
+    padding: 1rem;
+    background-color: rgb(255, 249, 243);
+    border-left: 2px solid #0b1731;
+    border-right: 2px solid #0b1731;
+    border-top: none;
+    border-bottom: 1px solid rgba(11, 23, 49, 0.4);
+    font-size: 1rem;
+    text-align: left;
+}
+
+.form-input:active {
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: rgba(11, 23, 49, 0.6);
+}
+
+.submit-button {
+    font-weight: bold;
+    text-decoration: none;
+    min-width: 10rem;
+    max-width: 50%;
+    display: flex;
+    vertical-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    height: 3rem;
+    margin: 2rem auto;
+    border: 2px solid #0b1731;
+    color: #0b1731;
+    background-color: linen;
+    border-radius: 2rem 2rem 2rem 2rem;
+}
+
+.submit-button:hover {
+    border: 2px solid #0b1731;
+    color: linen;
+    background-color: #0b1731;
+    border-radius: 2rem 2rem 2rem 2rem;
+}
+
+.form-input:first-of-type {
+    border-top: 2px solid #0B1731;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.form-input:last-of-type {
+    border-bottom: 2px solid #0B1731;
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* -------------------------------- Contact -------------------------------- */
+
+.contact {
+    max-width: 50%;
+    margin: 6rem auto;
+}
+
+/* -------------------------------- Terms -------------------------------- */
+
+.terms p {
+    margin: 1rem;
+}
+
+.terms li {
+    margin: 4rem auto;
+    list-style: none;
+}
+
+.terms-list {
+    margin: 6rem auto;
+}
+
+/* -------------------------------- Privacy -------------------------------- */
+
+.privacy {
+    margin: 4rem;
+}
+
+.privacy p {
+    margin: 2rem;
+}
+
+.privacy strong {
+    margin: -1rem;
+}
+
+.privacy li {
+    margin: auto 4rem;
+}
+
+/* -------------------------------- Errors -------------------------------- */
+
+#error404 {
+    margin-top: 14rem;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+}

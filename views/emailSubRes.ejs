@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”robots” content="noindex, nofollow">
+    <meta name="description" content="Email Subscriptions Status">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
+    <title>Newsletter</title>
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+        <main>
+            <div class="emailSubRes">
+                <h2 class="welcome">
+                    <%= status %>
+                </h2>
+                <p class="welcome-p">
+                    <%= description %>
+                </p>
+
+                <a href="/" class="submit-button">Go Back</a>
+            </div>
+
+            <%- include('partials/socialMedia.ejs') %>
+        </main>
+</body>
+<%- include('partials/footer.ejs') %>
+
+</html>

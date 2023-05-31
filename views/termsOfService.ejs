@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”robots” content="index, follow">
+    <meta name="description" content="Terms of Service browsing my website (aliassafiart.com).">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="images/favicon.png">
+    <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
+    <title>Terms of Service</title>
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+        <main>
+            <h2 class="welcome">Terms of Service</h2>
+            <p class="welcome">Welcome to our art website that sells books and apps! Before using our website or making
+                any purchases,
+                please read these terms of service carefully. By accessing or using our website, you agree to be bound
+                by
+                these terms of service.</p>
+
+            <%- include('partials/terms.ejs') %>
+
+                <p class="welcome">If you have any questions about these terms of service, please contact us at <a
+                        href="mailto:support@aliassafiart.com">support@aliassafiart.com</a>.</p>
+        </main>
+</body>
+<%- include('partials/footer.ejs') %>
+
+</html>

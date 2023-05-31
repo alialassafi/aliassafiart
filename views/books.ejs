@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”robots” content="index, follow">
+    <meta name="description"
+        content="Explore the store for the products and projects that I have done over the years. Like the illustrated novel 'Spell Book of Kirashima' and many more.">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
+    <title>Books</title>
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+        <main>
+            <section id="books">
+                <div class="section-begin">
+                    <hr>
+                    <h1 class="section-title">Books</h1>
+                    <hr>
+                </div>
+                <section id="spell-book-of-kirashima">
+                    <div class="image-buy">
+                        <img class="cover-img" src="images/Spell_Book_of_Kirashima.jpg" alt="cover-image">
+                    </div>
+                    <div class="book-info">
+                        <h2 class="book-title">Spell Book Of Kirashima</h2>
+                        <h4 class="series">Mysteries of Kira</h4>
+                        <h3 class="author">Written By: ALI ALASSAFI</h3>
+                        <h3 class="author">illustrated By: ALI ALASSAFI</h3>
+                        <p class="book-description">The garden in the village of Kira had a certain magic, a magic that
+                            was
+                            unknown
+                            to
+                            humans. Failing to find a
+                            way to use the magic without limits, the Elders of Kira had to start missions and journeys
+                            to
+                            find
+                            the
+                            secrets. Two ninjas, Aila and Aurora got possession of the book of Kirashima which was full
+                            of
+                            powerful
+                            spells that no one could read, and started their journey to find its secrets. Going through
+                            dangerous
+                            forests and empty deserts to reach the Black mountains of the dragon realm to acquire the
+                            legendary
+                            item
+                            that is supposed to make them able to use the book, they face dangerous creatures and
+                            enemies
+                            along
+                            the way
+                            and with each step, realizing that their journey is much bigger and important than before.
+                            When
+                            the
+                            dragons
+                            of the Black mountains attacked the village to get hold of the power of the magical garden,
+                            Aila
+                            and
+                            Aurora
+                            had to fight against them with whatever they had of weapons and spells to protect their
+                            village
+                            from
+                            ultimate destruction.</p>
+                        <div class="buy-container leftColumn">
+                            <a class="buy-button" href="/books/download/spell-book-of-kirashima-freesample">Free Sample</a>
+                            <a class="buy-button rightColumn" href="/buy/book/spell-book-of-kirashima">Buy</a>
+                        </div>
+                    </div>
+
+                </section>
+            </section>
+        </main>
+        <%- include('partials/socialMedia.ejs') %>
+        <hr>
+        <%- include('partials/emailSubscription.ejs') %>
+</body>
+
+<%- include('partials/footer.ejs') %>
+
+</html>
