@@ -20,12 +20,22 @@ app.use(express.static(`${__dirname}/public`));
 // ------------------------- DB -------------------------
 
 var mysql = require('mysql');
+// var con = mysql.createConnection({
+//     host: process.env.DATABASEHOST,
+//     user: process.env.DATABASEUSER,
+//     password: process.env.DATABASEPASSWORD,
+//     database: process.env.DATABASE,
+//     port: '3306',
+//     multipleStatements: true
+// });
+
 var con = mysql.createConnection({
-    host: process.env.DATABASEHOST,
-    user: process.env.DATABASEUSER,
-    password: process.env.DATABASEPASSWORD,
-    database: process.env.DATABASE,
-    port: '3306',
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    port: '8889',
+    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock',
+    database: 'aliassafiart',
     multipleStatements: true
 });
 
@@ -203,3 +213,10 @@ app.get('/terms-of-service', (req, res) => {
 app.get('/privacy-policy', (req, res) => {
     res.render('privacyPolicy.ejs');
 });
+
+
+// error
+
+app.get('*', (req, res) => {
+    res.render('404.ejs');
+  });

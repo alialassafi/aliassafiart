@@ -94,6 +94,55 @@ li {
     margin: 0.4rem;
 }
 
+.main-class {
+    grid-column: 2;
+    max-width: 75%;
+    margin: 1rem auto;
+}
+
+
+@media only screen and (max-width: 700px) {
+    h1 {
+        font-size: 1.4rem;
+        margin: 1.4rem auto;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin: 1.2rem auto;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 1rem;
+        margin: 1rem auto;
+    }
+
+    hr {
+        margin: 2rem auto;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem !important;
+        margin: auto 0.4rem !important;
+    }
+
+    main {
+        max-width: 90%;
+    }
+
+    .main-class {
+        max-width: 90%;
+    }
+
+}
+
 /* -------------------------------- Header -------------------------------- */
 
 .navbar {
@@ -105,35 +154,87 @@ li {
 
 .navbar-container {
     display: grid;
-    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr) minmax(min-content, 1fr);
+    grid-template-columns: minmax(min-content, 1fr);
     width: 100%;
     background-color: #0B1731;
     color: #F0E6DC;
 }
 
-.nav-left {
+.nav-section {
     grid-column: 1;
-    margin: auto 2rem;
-    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0.6rem auto;
 }
 
 .logo {
-    grid-column: 2;
     width: 2.8rem;
     height: 2.8rem;
-    margin: 0.4rem auto;
-}
-
-.nav-right {
-    grid-column: 3;
-    text-align: right;
-    margin: auto 2rem;
+    margin: 0.6rem auto;
 }
 
 .nav-item {
     margin: auto 1rem;
     text-decoration: none;
     color: #F0E6DC;
+}
+
+@media only screen and (max-width: 700px) {
+
+    .navbar-container {
+        width: 100%;
+    }
+
+    .nav-section {
+        margin: 0.6rem auto;
+    }
+
+    .logo {
+        width: 2rem;
+        height: 2rem;
+        margin: 0.6rem auto;
+    }
+
+    .nav-item {
+        margin: auto 0.4rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+    .navbar {
+        position: relative;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    
+    .navbar-container {
+        width: 100%;
+    }
+
+    .nav-section {
+        margin: 0.6rem auto;
+        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .logo {
+        width: 2.4rem;
+        height: 2.4rem;
+        margin: 0.6rem auto;
+    }
+
+    .nav-item {
+        margin: 0.2rem 0.4rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* -------------------------------- About -------------------------------- */
@@ -184,7 +285,6 @@ li {
 
 .social-icons {
     text-align: center;
-    margin-bottom: 6rem;
 }
 
 .social-link {
@@ -196,6 +296,14 @@ li {
     max-width: 2rem;
     margin: 0.8rem;
 }
+
+@media only screen and (max-width: 700px) {
+    .profile-pic {
+        max-width: 75%;
+    }
+}
+
+
 
 /* -------------------------------- Home -------------------------------- */
 
@@ -215,6 +323,7 @@ li {
     gap: 4rem;
     margin: 6rem;
 }
+
 /* 
 .showcase-imgs {
     margin: 4rem;
@@ -225,9 +334,38 @@ li {
 } */
 
 .showcase img {
-    max-height: 18rem;
+    max-height: 20rem;
     border-radius: 1rem;
     filter: contrast(1.1);
+}
+
+@media only screen and (max-width: 700px) {
+    .showcase {
+        display: grid;
+        grid-column: 2/3;
+        margin: 1rem;
+        gap: 1rem;
+    }
+
+    .showcase img {
+        display: flex;
+        max-width: 100%;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .welcome {
+        text-align: center;
+        margin: 2rem auto;
+        font-size: 1.4rem;
+    }
+
+    .welcome-p {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
 }
 
 /* -------------------------------- Portfolio -------------------------------- */
@@ -265,8 +403,34 @@ li {
     margin: 0.4rem;
 }
 
+@media only screen and (max-width: 700px) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-bottom: 4rem;
+    }
 
-/* -------------------------------- Projects -------------------------------- */
+    .image-column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+
+    .column-left {
+        display: flex;
+    }
+
+    .column-middle {
+        display: flex;
+    }
+
+    .column-right {
+        display: flex;
+    }
+}
+
+/* -------------------------------- Books -------------------------------- */
 
 .section-begin {
     display: flex;
@@ -372,6 +536,7 @@ li {
 
     .book-title {
         margin-top: 2.4rem;
+        text-align: center;
     }
 
     .book-info {
@@ -379,7 +544,6 @@ li {
     }
 
     #spell-book-of-kirashima {
-        grid-column: 2/3;
         display: flex;
         flex-direction: column;
         margin-top: 0.8rem;
@@ -391,6 +555,38 @@ li {
         flex-direction: column;
     }
 
+    .cover-img {
+        grid-column: 1;
+        display: flex;
+        max-width: 80%;
+        margin: auto;
+    }
+
+    #spell-book-of-kirashima .author {
+        text-align: center;
+        margin: 1rem auto;
+    }
+
+    #spell-book-of-kirashima .series {
+        text-align: center;
+        margin: 1rem auto;
+    }
+
+    .book-info {
+        margin: 0;
+    }
+
+    .book-info p {
+        grid-column: 1;
+        margin-top: 1rem;
+    }
+
+    .buy-button {
+        max-width: 4rem;
+        height: 3rem;
+        font-size: 1.2rem;
+        margin: 2rem auto 0;
+    }
 }
 
 /* -------------------------------- Buy Section -------------------------------- */
@@ -417,7 +613,7 @@ li {
     text-decoration: none;
     font-weight: 600;
     color: #0B1731;
-    margin: 2rem 30%;
+    margin: 2rem 20%;
 }
 
 .buy-icon {
@@ -426,16 +622,46 @@ li {
     margin: auto 2rem;
 }
 
+@media only screen and (max-width: 700px) {
+
+
+    .buy-heading {
+        text-align: center;
+    }
+
+    .buy-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buy-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buy-link {
+        margin: 0.6rem 20%;
+    }
+
+    .buy-icon {
+        max-width: 3rem;
+        margin: 1rem 2rem 1rem 0;
+    }
+
+}
+
 /* -------------------------------- Footer -------------------------------- */
 
 footer {
+    position: relative;
+    bottom: 0;
     background-color: #0B1731;
     color: #F0E6DC;
 }
 
 .footer-containers {
     display: grid;
-    grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 50%) minmax(min-content, 20%) minmax(2rem, 1fr);
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 50%) minmax(min-content, 20%) minmax(2rem, 1fr);
     row-gap: 3rem;
     column-gap: 3rem;
     padding-bottom: 2rem;
@@ -472,15 +698,54 @@ footer {
     font-size: 0.8rem;
 }
 
+@media only screen and (max-width: 700px) {
+
+    .footer-containers {
+        display: grid;
+        grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 50%) minmax(min-content, 50%) minmax(min-content, 1fr);
+        row-gap: 3rem;
+        column-gap: 0.4rem;
+        padding-bottom: 2rem;
+    }
+
+    .term-of-use-title {
+        font-size: 1rem;
+    }
+
+    .about-website-title {
+        font-size: 1rem;
+    }
+
+    .term-of-use-link {
+        font-size: 1rem;
+        margin: 0.4rem;
+    }
+
+    .term-of-use {
+        margin: 0 auto;
+    }
+
+    .about-website {
+        grid-column: 2;
+        margin: 0 0.6rem;
+    }
+
+    .about-website-p {
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+}
+
 /* -------------------------------- /newsletter -------------------------------- */
 
 .emailSubRes {
-    margin-top: 14rem;
+    margin-top: 7rem;
     height: 25vh;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     align-items: center;
+    margin-bottom: 6rem;
 }
 
 input:focus::placeholder {
@@ -546,11 +811,35 @@ input:focus::placeholder {
     border-radius: 0 0 1rem 1rem;
 }
 
+@media only screen and (max-width: 700px) {
+    .submit-button {
+        max-width: 4rem;
+        height: 3rem;
+        font-size: 1.2rem;
+        margin: 2rem auto;
+    }
+
+    .emailSubRes {
+        margin-top: 2rem;
+    }
+}
+
 /* -------------------------------- Contact -------------------------------- */
 
 .contact {
     max-width: 50%;
     margin: 6rem auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .contact {
+        max-width: 100%;
+        margin: 2rem auto;
+    }
+
+    .note {
+        text-align: justify;
+    }
 }
 
 /* -------------------------------- Terms -------------------------------- */
@@ -586,13 +875,44 @@ input:focus::placeholder {
     margin: auto 4rem;
 }
 
+@media only screen and (max-width: 700px) {
+    .privacy {
+        margin: 2rem;
+    }
+    
+    .privacy p {
+        margin: 1rem;
+    }
+    
+    .privacy strong {
+        margin: -1rem;
+    }
+    
+    .privacy li {
+        margin: auto 2rem;
+    }
+}
+
 /* -------------------------------- Errors -------------------------------- */
 
 #error404 {
-    margin-top: 14rem;
+    margin-top: 11.9rem;
     height: 50vh;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     align-items: center;
+    text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+    #error404 {
+        margin: 2rem auto;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        align-items: center;
+        text-align: center;
+    }
 }
