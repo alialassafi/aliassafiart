@@ -35,7 +35,7 @@ app.listen(process.env.PORT || 3000, function () {
     console.log("server is running on port 3000")
 });
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
     res.render('home.ejs');
 });
 
