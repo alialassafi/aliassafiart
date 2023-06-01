@@ -411,10 +411,14 @@ li {
         margin-bottom: 4rem;
     }
 
+    .gallery img {
+        margin: 0.4rem auto;
+    }
+
     .image-column {
         display: flex;
         flex-direction: column;
-        gap: 0.1rem;
+        gap: 0rem;
     }
 
     .column-left {
