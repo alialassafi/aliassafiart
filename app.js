@@ -20,22 +20,12 @@ app.use(express.static(`${__dirname}/public`));
 // ------------------------- DB -------------------------
 
 var mysql = require('mysql');
-// var con = mysql.createConnection({
-//     host: process.env.DATABASEHOST,
-//     user: process.env.DATABASEUSER,
-//     password: process.env.DATABASEPASSWORD,
-//     database: process.env.DATABASE,
-//     port: '3306',
-//     multipleStatements: true
-// });
-
 var con = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    port: '8889',
-    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock',
-    database: 'aliassafiart',
+    host: process.env.DATABASEHOST,
+    user: process.env.DATABASEUSER,
+    password: process.env.DATABASEPASSWORD,
+    database: process.env.DATABASE,
+    port: '3306',
     multipleStatements: true
 });
 
