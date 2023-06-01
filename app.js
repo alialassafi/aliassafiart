@@ -143,46 +143,46 @@ app.post("/newsletter", function (req, res) {
 
 
 
-    // saving data in a format that mailchimp accepts
-    const data = {
-        update_existing: true, // allow updating data of user when he/she resubmits
-        members: [{
-            email_address: email,
-            status: "subscribed",
-            merge_fields: {
-                FNAME: firstName,
-                LNAME: lastName
-            }
-        }]
-    };
+    // // saving data in a format that mailchimp accepts
+    // const data = {
+    //     update_existing: true, // allow updating data of user when he/she resubmits
+    //     members: [{
+    //         email_address: email,
+    //         status: "subscribed",
+    //         merge_fields: {
+    //             FNAME: firstName,
+    //             LNAME: lastName
+    //         }
+    //     }]
+    // };
 
-    const jsonData = JSON.stringify(data);
+    // const jsonData = JSON.stringify(data);
 
-    // making url in a format that mailchimp accepts
-    url = process.env.MAILCHIMPURL;
-    options = {
-        method: "POST",
-        auth: process.env.MAILCHIMPAUTH
-    };
+    // // making url in a format that mailchimp accepts
+    // url = process.env.MAILCHIMPURL;
+    // options = {
+    //     method: "POST",
+    //     auth: process.env.MAILCHIMPAUTH
+    // };
 
-    const addMember = https.request(url, options, function (response) {
+    // const addMember = https.request(url, options, function (response) {
 
-        response.on("data", function (data) {
-            const receivedData = JSON.parse(data);
-            console.log(receivedData);
-            if (response.statusCode == 200 && receivedData.total_created > 0) {
-                console.log('Success Mailchimp');
-            } else if (response.statusCode == 200 && receivedData.total_updated > 0) {
-                console.log('Updated Mailchimp');
-            } else {
-                console.log('Failed Mailchimp');
-            }
-        })
+    //     response.on("data", function (data) {
+    //         const receivedData = JSON.parse(data);
+    //         console.log(receivedData);
+    //         if (response.statusCode == 200 && receivedData.total_created > 0) {
+    //             console.log('Success Mailchimp');
+    //         } else if (response.statusCode == 200 && receivedData.total_updated > 0) {
+    //             console.log('Updated Mailchimp');
+    //         } else {
+    //             console.log('Failed Mailchimp');
+    //         }
+    //     })
 
-    })
+    // })
 
-    addMember.write(jsonData);
-    addMember.end();
+    // addMember.write(jsonData);
+    // addMember.end();
 
 });
 
