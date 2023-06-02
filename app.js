@@ -36,22 +36,22 @@ app.listen(process.env.PORT || 3000, function () {
 });
 
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    res.render('home.ejs', {googleAnalyticsUrl: process.env.GOOGLEANALYTICSURL, googleAnalyticsProperty: process.env.GOOGLEANALYTICSPROPERTY});
 });
 
 app.get('/about', (req, res) => {
-    res.render('about.ejs');
+    res.render('about.ejs', {googleAnalyticsUrl: process.env.GOOGLEANALYTICSURL, googleAnalyticsProperty: process.env.GOOGLEANALYTICSPROPERTY});
 });
 
 app.get('/portfolio', (req, res) => {
-    res.render('portfolio.ejs');
+    res.render('portfolio.ejs', {googleAnalyticsUrl: process.env.GOOGLEANALYTICSURL, googleAnalyticsProperty: process.env.GOOGLEANALYTICSPROPERTY});
 });
 
 
 // -------------- /books --------------
 
 app.get('/books', (req, res) => {
-    res.render('books.ejs');
+    res.render('books.ejs', {googleAnalyticsUrl: process.env.GOOGLEANALYTICSURL, googleAnalyticsProperty: process.env.GOOGLEANALYTICSPROPERTY});
 });
 
 // ----- /books/books -----
@@ -90,7 +90,9 @@ app.get('/buy/book/:bookName', (req, res) => {
                 vivlio: result[1][0].vivlio,
                 mondadori: result[1][0].mondadori,
                 palace: result[1][0].palace,
-                smashWords: result[1][0].smashWords
+                smashWords: result[1][0].smashWords, 
+                googleAnalyticsUrl: process.env.GOOGLEANALYTICSURL, 
+                googleAnalyticsProperty: process.env.GOOGLEANALYTICSPROPERTY
             };
             res.render('buyBook.ejs', inParams);
         } else {
@@ -190,18 +192,18 @@ app.post("/newsletter", function (req, res) {
 // -------------- /contact --------------
 
 app.get('/contact', (req, res) => {
-    res.render('contact.ejs');
+    res.render('contact.ejs', {googleAnalyticsUrl: process.env.GOOGLEANALYTICSURL, googleAnalyticsProperty: process.env.GOOGLEANALYTICSPROPERTY});
 })
 
 
 // -------------- /terms --------------
 
 app.get('/terms-of-service', (req, res) => {
-    res.render('termsOfService.ejs');
+    res.render('termsOfService.ejs', {googleAnalyticsUrl: process.env.GOOGLEANALYTICSURL, googleAnalyticsProperty: process.env.GOOGLEANALYTICSPROPERTY});
 });
 
 app.get('/privacy-policy', (req, res) => {
-    res.render('privacyPolicy.ejs');
+    res.render('privacyPolicy.ejs', {googleAnalyticsUrl: process.env.GOOGLEANALYTICSURL, googleAnalyticsProperty: process.env.GOOGLEANALYTICSPROPERTY});
 });
 
 

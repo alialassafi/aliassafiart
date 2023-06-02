@@ -14,6 +14,16 @@
     <title>Contact Us</title>
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src=<%= googleAnalyticsUrl %>></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', <%=googleAnalyticsProperty%>);
+</script>
+
 <body>
     <%- include('partials/header.ejs') %>
         <main>
