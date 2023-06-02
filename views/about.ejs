@@ -12,31 +12,31 @@
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD36BDP03S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RD36BDP03S');
+    </script>
+
     <title>About</title>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RD36BDP03S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RD36BDP03S');
-</script>
-
 <body>
     <%- include('partials/header.ejs') %>
-    <main>
-        <div class="section-begin">
-            <hr>
-            <h1 class="section-title">About Me</h1>
-            <hr>
-        </div>
+        <main>
+            <div class="section-begin">
+                <hr>
+                <h1 class="section-title">About Me</h1>
+                <hr>
+            </div>
 
-        <section id="aboutme">
-            <img class="profile-pic" src="images/profile.jpeg" alt="Founder Photo">
-            
+            <section id="aboutme">
+                <img class="profile-pic" src="images/profile.jpeg" alt="Founder Photo">
+
                 <div class="name-job">
                     <h2>Hi! I'm Ali</h2>
                     <h2>An Artist & A Writer</h2>
@@ -54,16 +54,16 @@
                         mostly
                         the same as the previous ones, I want to create new stories that people can enjoy.</p>
                 </div>
-            </main>
+        </main>
 
         </section>
 
         <section class="main-class">
-        
-        <%- include('partials/socialMedia.ejs') %>
-        <hr>
-        <%- include('partials/emailSubscription.ejs') %>
-    </section>
+
+            <%- include('partials/socialMedia.ejs') %>
+                <hr>
+                <%- include('partials/emailSubscription.ejs') %>
+        </section>
 </body>
 
 <%- include('partials/footer.ejs') %>

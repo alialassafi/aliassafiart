@@ -12,18 +12,18 @@
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD36BDP03S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RD36BDP03S');
+    </script>
+
     <title>Books</title>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RD36BDP03S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RD36BDP03S');
-</script>
 
 <body>
     <%- include('partials/header.ejs') %>
@@ -77,7 +77,8 @@
                             from
                             ultimate destruction.</p>
                         <div class="buy-container leftColumn">
-                            <a class="buy-button" href="/books/download/spell-book-of-kirashima-freesample">Free Sample</a>
+                            <a class="buy-button" href="/books/download/spell-book-of-kirashima-freesample">Free
+                                Sample</a>
                             <a class="buy-button rightColumn" href="/buy/book/spell-book-of-kirashima">Buy</a>
                         </div>
                     </div>
@@ -86,9 +87,9 @@
             </section>
         </main>
         <section class="main-class">
-        <%- include('partials/socialMedia.ejs') %>
-        <hr>
-        <%- include('partials/emailSubscription.ejs') %>
+            <%- include('partials/socialMedia.ejs') %>
+                <hr>
+                <%- include('partials/emailSubscription.ejs') %>
         </section>
 </body>
 
