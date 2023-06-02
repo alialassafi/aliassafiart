@@ -2,75 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name=”robots” content="index, follow">
-    <meta name="description" content="Explore the awesome art, illustrated books and more from ALI ALASSAFI">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" href="/images/favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD36BDP03S"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD36BDP03S"></script>
+        <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
 
-        gtag('config', 'G-RD36BDP03S');
-    </script>
+                gtag('config', 'G-RD36BDP03S');
+        </script>
 
-    <title>Buy Book</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name=”robots” content="index, follow">
+        <meta name="description" content="Explore the awesome art, illustrated books and more from ALI ALASSAFI">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/images/favicon.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <script src="https://kit.fontawesome.com/89820edd01.js" crossorigin="anonymous"></script>
+
+        <title>Buy Book</title>
 </head>
 
 <body>
-    <%- include('partials/header.ejs') %>
+        <%- include('partials/header.ejs') %>
 
-        <main>
-            <div class="section-begin">
-                <hr>
-                <h1 class="section-title">
-                    <%= book %>
-                </h1>
-                <hr>
-            </div>
-            <h3 class="buy-heading">Buy From Your Favorite Book Store!</h3>
-            <section class="buy-section">
+                <main>
+                        <div class="section-begin">
+                                <hr>
+                                <h1 class="section-title">
+                                        <%= book %>
+                                </h1>
+                                <hr>
+                        </div>
+                        <h3 class="buy-heading">Buy From Your Favorite Book Store!</h3>
+                        <section class="buy-section">
 
-                <div class="buy-links leftColumn">
-                    <a href=<%=apple %> class="buy-link" target="_blank"><i
-                            class="fa-brands fa-apple fa-4x buy-icon"></i>Apple Books</a>
-                    <a href=<%=kobo %> class="buy-link" target="_blank"><img class="buy-icon" src="/images/KoboApp.png"
-                            alt="Rakuten Kobo">Rakuten Kobo</a>
-                    <a href=<%=barnesAndNoble %> class="buy-link" target="_blank"><img class="buy-icon"
-                            src="/images/barnes&noble.png" alt="barnes&noble">Barnes & Noble</a>
-                    <a href=<%=scribd %> class="buy-link" target="_blank"><i
-                            class="fa-brands fa-scribd fa-4x buy-icon"></i>Scribd</a>
-                    <a href=<%=thalia %> class="buy-link" target="_blank"><img class="buy-icon" src="/images/thalia.png"
-                            alt="thalia">Thalia</a>
+                                <div class="buy-links leftColumn">
+                                        <a href=<%=apple %> class="buy-link" target="_blank"><i
+                                                        class="fa-brands fa-apple fa-4x buy-icon"></i>Apple Books</a>
+                                        <a href=<%=kobo %> class="buy-link" target="_blank"><img class="buy-icon"
+                                                        src="/images/KoboApp.png" alt="Rakuten Kobo">Rakuten Kobo</a>
+                                        <a href=<%=barnesAndNoble %> class="buy-link" target="_blank"><img
+                                                        class="buy-icon" src="/images/barnes&noble.png"
+                                                        alt="barnes&noble">Barnes & Noble</a>
+                                        <a href=<%=scribd %> class="buy-link" target="_blank"><i
+                                                        class="fa-brands fa-scribd fa-4x buy-icon"></i>Scribd</a>
+                                        <a href=<%=thalia %> class="buy-link" target="_blank"><img class="buy-icon"
+                                                        src="/images/thalia.png" alt="thalia">Thalia</a>
 
-                </div>
-                <div class="buy-links rightColumn">
-                    <a href=<%=angusAndRobertson %> class="buy-link" target="_blank"><img class="buy-icon"
-                            src="/images/angus-robertson.png" alt="angus&robertson">Angus & Robertson</a>
-                    <a href=<%=mondadori %> class="buy-link" target="_blank"><img class="buy-icon"
-                            src="/images/mondadori.png" alt="mondadori">Mondadori</a>
-                    <a href=<%=vivlio %> class="buy-link" target="_blank"><img class="buy-icon" src="/images/vivlio.png"
-                            alt="vivlio">Vivlio</a>
-                    <a href=<%=palace %> class="buy-link" target="_blank"><img class="buy-icon" src="/images/Palace.png"
-                            alt="Palace Marketplace">Palace Marketplace</a>
-                    <a href=<%=smashWords %> class="buy-link" target="_blank"><img class="buy-icon"
-                            src="/images/smashWords.png" alt="smashWords">Smashwords</a>
+                                </div>
+                                <div class="buy-links rightColumn">
+                                        <a href=<%=angusAndRobertson %> class="buy-link" target="_blank"><img
+                                                        class="buy-icon" src="/images/angus-robertson.png"
+                                                        alt="angus&robertson">Angus & Robertson</a>
+                                        <a href=<%=mondadori %> class="buy-link" target="_blank"><img class="buy-icon"
+                                                        src="/images/mondadori.png" alt="mondadori">Mondadori</a>
+                                        <a href=<%=vivlio %> class="buy-link" target="_blank"><img class="buy-icon"
+                                                        src="/images/vivlio.png" alt="vivlio">Vivlio</a>
+                                        <a href=<%=palace %> class="buy-link" target="_blank"><img class="buy-icon"
+                                                        src="/images/Palace.png" alt="Palace Marketplace">Palace
+                                                Marketplace</a>
+                                        <a href=<%=smashWords %> class="buy-link" target="_blank"><img class="buy-icon"
+                                                        src="/images/smashWords.png" alt="smashWords">Smashwords</a>
 
-                </div>
-
-
-            </section>
-        </main>
+                                </div>
 
 
-        <%- include('partials/socialMedia.ejs') %>
+                        </section>
+                </main>
+
+
+                <%- include('partials/socialMedia.ejs') %>
 </body>
 <%- include('partials/footer.ejs') %>
 
