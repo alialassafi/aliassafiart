@@ -193,6 +193,8 @@ app.post("/newsletter", function (req, res) {
 
 });
 
+// --- confirm subscription ---
+
 app.get('/newsletter/confirm/:subscriberID', (req, res) => {
     const subscriberID = req.params.subscriberID;
     console.log(subscriberID);
@@ -206,6 +208,8 @@ app.get('/newsletter/confirm/:subscriberID', (req, res) => {
         }
     })
 });
+
+// --- unsubscribe ---
 
 app.route('/newsletter/unsubscribe/imsureiwanttosubscribe')
 .get((req,res)=>{
