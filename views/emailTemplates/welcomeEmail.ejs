@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="color-scheme" content="light only">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; font-family: Avenir, Montserrat, sans-serif; }
+        body { background-color: linen; }
+        main { grid-column: 2; max-width: 75%; height: 100%; margin: 0 auto; padding: 2rem; background-color: white; }
+        h1, h2, h3 { text-align: inherit; margin: 2rem auto; }
+        h4, h5, h6 { text-align: inherit; margin: 1rem auto; }
+        p { font-size: 1rem; font-weight: 500; }
+        a { text-decoration: none; color: #0B1731; font-weight: bold; }
+        img { pointer-events: none; }
+        .center-text { text-align: center; margin: 2rem auto; }
+        .logo { display: block; width: 10rem; height: 10rem; margin: auto; }
+        .divider-large { padding-bottom: 4rem; }
+        .submit-button { font-weight: bold; text-decoration: none; max-width: fit-content;
+            padding: 0 2rem; display: flex; vertical-align: center; justify-content: center; align-items: center; font-size: 1.1rem; height: 3rem;
+            margin: 2rem auto; border: 2px solid #0B1731; color: linen; background-color: #0B1731; border-radius: 2rem 2rem 2rem 2rem; }
+        .copyright { text-align: center; padding: 1rem; font-size: 0.8rem; }
+        .note { font-size: 0.9rem; text-align: center; margin-top: 2rem; }
+
+        @media only screen and (max-width: 700px) {
+            .logo {width: 6rem; height: 6rem;}
+            h1 { font-size: 1.4rem; margin: 1.4rem auto; }
+            h2 { font-size: 1.2rem; margin: 1.2rem auto; }
+            h3, h4, h5, h6 { font-size: 1rem; margin: 1rem auto;}
+            p { font-size: 1rem; }
+            main { max-width: 90%; }
+            .submit-button { padding: 0 1rem; height: 3rem; font-size: 1.1rem; margin: 2rem auto;}
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <img class="logo" src="cid:logo" />
+        <h2 class="center-text">Thank You For Subscribing To Our Newsletter!</h2>
+        <p class="center-text">You will be receiving emails whenever I publish a new book or product. You will also
+            receive emails for exclusive deals and promo codes.</p>
+        <p class="note">Please Confirm Your Subscription</p>
+        <a class="submit-button" href=<%=content %>>Confirm Email</a>
+
+        <p class="copyright">Copyright &copy; 2023 Ali Abbas Abdulkareem Alassafi. All Rights Reserved.</p>
+        <a class="center-text" href="https://aliassafiart.com/newsletter/unsubscribe/imsureiwanttosubscribe">Unsubscribe</a>
+    </main>
+</body>
+
+</html>

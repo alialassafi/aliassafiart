@@ -13,6 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const https = require("https");
 
+const nodemailer = require('nodemailer');
+
 
 // ------------------------- Public -------------------------
 app.use(express.static(`${__dirname}/public`));
@@ -90,7 +92,7 @@ app.get('/buy/book/:bookName', (req, res) => {
                 vivlio: result[1][0].vivlio,
                 mondadori: result[1][0].mondadori,
                 palace: result[1][0].palace,
-                smashWords: result[1][0].smashWords, 
+                smashWords: result[1][0].smashWords,
             };
             res.render('buyBook.ejs', inParams);
         } else {
@@ -108,83 +110,120 @@ app.post("/newsletter", function (req, res) {
     const lastName = _.upperCase(req.body.lastName);
     const email = _.toLower(req.body.email);
 
+    let transport = nodemailer.createTransport({
+        host: process.env.SMTPHOST,
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+            user: process.env.NEWSLETTEREMAIL,
+            pass: process.env.NEWSLETTERPASSWORD,
+        },
+    });
+
+    const sendEmail = (receiver, subject, content) => {
+        ejs.renderFile(__dirname + '/views/emailTemplates/welcomeEmail.ejs', { receiver, content }, (err, data) => {
+            if (err) {
+                console.log(err);
+            } else {
+                var mailOptions = {
+                    from: `"ALI ALASSAFI" <${process.env.NEWSLETTEREMAIL}>`,
+                    to: receiver,
+                    subject: subject,
+                    html: data,
+                    attachments: [{   // stream as an attachment
+                        filename: 'logo.png',
+                        path: `${__dirname}/public/images/favicon.png`,
+                        cid: 'logo' //same cid value as in the html 
+                    }]
+                };
+
+                transport.sendMail(mailOptions, (error, info) => {
+                    if (error) {
+                        return console.log(error);
+                    }
+                    console.log('Message sent: %s', info.messageId);
+                });
+            }
+        });
+    };
 
 
     var sql = "SELECT id FROM newsletter WHERE email = " + mysql.escape(email);
     con.query(sql, (err, result) => {
         if (err) throw err;
         if (result.length !== 0) {
-            var sql = "UPDATE newsletter SET firstName= " + mysql.escape(firstName) + ", lastName= " + mysql.escape(lastName) + ", email= " + mysql.escape(email) + "WHERE id = " + result[0].id;
+            let subscriberID = result[0].id;
+            let sql = "UPDATE newsletter SET firstName= " + mysql.escape(firstName) + ", lastName= " + mysql.escape(lastName) + ", email= " + mysql.escape(email) + ", confirmation='Not Confirmed' WHERE id = " + result[0].id;
             con.query(sql, (err, result) => {
                 if (err) throw err;
                 if (err) {
                     res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Sign You Up For The Newsletter. If you think this should not happen, please contact us and report this issue." });
                 } else {
                     console.log('1 record updated');
+                    sendEmail(email, "Welcome", `https://aliassafiart.com/newsletter/confirm/${subscriberID}`);
                     res.render('emailSubRes.ejs', { status: "Updated!", description: "Successfully Updated Your Info" });
                 }
             });
         } else {
-
-            var sql = "INSERT INTO newsletter (firstName, lastName, email) VALUES (" + mysql.escape(firstName) + "," + mysql.escape(lastName) + "," + mysql.escape(email) + ")";
-            console.log(sql);
+            let sql = "INSERT INTO newsletter (firstName, lastName, email, confirmation) VALUES (" + mysql.escape(firstName) + "," + mysql.escape(lastName) + "," + mysql.escape(email) + ", 'Not Confirmed')";
             con.query(sql, function (err, result) {
                 if (err) throw err;
                 if (err) {
                     res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Sign You Up For The Newsletter. If you think this should not happen, please contact us and report this issue." });
                 } else {
                     console.log("1 record inserted");
-                    res.render('emailSubRes.ejs', { status: "Success!", description: "Successfully Subscribed To My Newsletter!" });
+                    let sql = "SELECT id FROM newsletter WHERE email = " + mysql.escape(email);
+                    con.query(sql, (err, resultID) => {
+                        let subscriberID = resultID[0].id;
+                        if (err) throw err;
+                        if (err) {
+                            res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Sign You Up For The Newsletter. If you think this should not happen, please contact us and report this issue." });
+                        } else {
+                            sendEmail(email, "Welcome", `https://aliassafiart.com/newsletter/confirm/${subscriberID}`);
+                            res.render('emailSubRes.ejs', { status: "Success!", description: "Successfully Subscribed To My Newsletter!" });
+
+                        }
+                    })
+
                 }
 
             });
         }
     });
 
-
-
-    // // saving data in a format that mailchimp accepts
-    // const data = {
-    //     update_existing: true, // allow updating data of user when he/she resubmits
-    //     members: [{
-    //         email_address: email,
-    //         status: "subscribed",
-    //         merge_fields: {
-    //             FNAME: firstName,
-    //             LNAME: lastName
-    //         }
-    //     }]
-    // };
-
-    // const jsonData = JSON.stringify(data);
-
-    // // making url in a format that mailchimp accepts
-    // url = process.env.MAILCHIMPURL;
-    // options = {
-    //     method: "POST",
-    //     auth: process.env.MAILCHIMPAUTH
-    // };
-
-    // const addMember = https.request(url, options, function (response) {
-
-    //     response.on("data", function (data) {
-    //         const receivedData = JSON.parse(data);
-    //         console.log(receivedData);
-    //         if (response.statusCode == 200 && receivedData.total_created > 0) {
-    //             console.log('Success Mailchimp');
-    //         } else if (response.statusCode == 200 && receivedData.total_updated > 0) {
-    //             console.log('Updated Mailchimp');
-    //         } else {
-    //             console.log('Failed Mailchimp');
-    //         }
-    //     })
-
-    // })
-
-    // addMember.write(jsonData);
-    // addMember.end();
-
 });
+
+app.get('/newsletter/confirm/:subscriberID', (req, res) => {
+    const subscriberID = req.params.subscriberID;
+    console.log(subscriberID);
+    let sql = "UPDATE newsletter SET confirmation='Confirmed' WHERE id =" + subscriberID;
+    con.query(sql, (err, result) => {
+        if (err) throw err;
+        if (err) {
+            res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To confirm your email. If you think this should not happen, please contact us and report this issue." });
+        } else {
+            res.render('emailSubRes.ejs', { status: "Success!", description: "Successfully Confirmed Your Email!" });
+        }
+    })
+});
+
+app.route('/newsletter/unsubscribe/imsureiwanttosubscribe')
+.get((req,res)=>{
+    res.render('newsletterUnsubscribe.ejs');
+})
+.post((req, res)=>{
+    const email = _.toLower(req.body.email);
+    let sql = "DELETE FROM newsletter WHERE email = " + mysql.escape(email);
+    con.query(sql, (err, result)=>{
+        if (err) throw err;
+        if (err) {
+            res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Unsubscribe From Newsletter. If you think this should not happen, please contact us and report this issue." });
+        } else {
+            res.render('emailSubRes.ejs', { status: "Success!", description: "Successfully Unsubscribed From Newsletter" });
+        }
+    })
+})
+
 
 
 // -------------- /contact --------------
@@ -209,4 +248,4 @@ app.get('/privacy-policy', (req, res) => {
 
 app.get('*', (req, res) => {
     res.render('404.ejs');
-  });
+});

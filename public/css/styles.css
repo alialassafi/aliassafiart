@@ -84,6 +84,7 @@ form {
 
 .note {
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .text-center {
@@ -179,6 +180,19 @@ li {
     margin: auto 1rem;
     text-decoration: none;
     color: #F0E6DC;
+}
+
+.form-input-normal {
+    display: block;
+    margin: auto;
+    min-width: 40%;
+    max-width: 75%;
+    padding: 1rem;
+    background-color: rgb(255, 249, 243);
+    border: 2px solid #0b1731;
+    border-radius: 2rem;
+    font-size: 1rem;
+    text-align: left;
 }
 
 @media only screen and (max-width: 700px) {
@@ -784,7 +798,8 @@ input:focus::placeholder {
     font-weight: bold;
     text-decoration: none;
     min-width: 10rem;
-    max-width: 50%;
+    max-width: fit-content;
+    padding: 0 2rem;
     display: flex;
     vertical-align: center;
     justify-content: center;
@@ -817,7 +832,7 @@ input:focus::placeholder {
 
 @media only screen and (max-width: 700px) {
     .submit-button {
-        max-width: 4rem;
+        padding: 0 1rem;
         height: 3rem;
         font-size: 1.2rem;
         margin: 2rem auto;
