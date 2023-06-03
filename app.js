@@ -212,21 +212,21 @@ app.get('/newsletter/confirm/:subscriberID', (req, res) => {
 // --- unsubscribe ---
 
 app.route('/newsletter/unsubscribe/imsureiwanttosubscribe')
-.get((req,res)=>{
-    res.render('newsletterUnsubscribe.ejs');
-})
-.post((req, res)=>{
-    const email = _.toLower(req.body.email);
-    let sql = "DELETE FROM newsletter WHERE email = " + mysql.escape(email);
-    con.query(sql, (err, result)=>{
-        if (err) throw err;
-        if (err) {
-            res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Unsubscribe From Newsletter. If you think this should not happen, please contact us and report this issue." });
-        } else {
-            res.render('emailSubRes.ejs', { status: "Success!", description: "Successfully Unsubscribed From Newsletter" });
-        }
+    .get((req, res) => {
+        res.render('newsletterUnsubscribe.ejs');
     })
-})
+    .post((req, res) => {
+        const email = _.toLower(req.body.email);
+        let sql = "DELETE FROM newsletter WHERE email = " + mysql.escape(email);
+        con.query(sql, (err, result) => {
+            if (err) throw err;
+            if (err) {
+                res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Unsubscribe From Newsletter. If you think this should not happen, please contact us and report this issue." });
+            } else {
+                res.render('emailSubRes.ejs', { status: "Success!", description: "Successfully Unsubscribed From Newsletter" });
+            }
+        })
+    })
 
 
 
@@ -236,6 +236,47 @@ app.get('/contact', (req, res) => {
     res.render('contact.ejs');
 })
 
+app.post('/contact/support', (req, res) => {
+    const firstName = _.upperCase(req.body.firstName);
+    const lastName = _.upperCase(req.body.lastName);
+    const email = _.toLower(req.body.email);
+    const subject = req.body.subject;
+    const message = req.body.message;
+
+    let transport = nodemailer.createTransport({
+        host: process.env.SMTPHOST,
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+            user: process.env.SUPPORTEMAIL,
+            pass: process.env.SUPPORTPASSWORD,
+        },
+    });
+
+    const sendEmail = () => {
+
+        var mailOptions = {
+            from: `"${firstName} ${lastName}" <${email}>`,
+            to: process.env.SUPPORTEMAIL,
+            subject: subject,
+            text: message,
+        };
+
+        transport.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+                res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Send Message. If you think this should not happen, please contact us and report this issue." });
+            }
+            console.log('Message sent: %s', info.messageId);
+        });
+
+    };
+
+    sendEmail();
+
+    res.render('emailSubRes.ejs', { status: "Success!", description: "Message Sent Successfully" });
+
+});
 
 // -------------- /terms --------------
 

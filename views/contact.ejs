@@ -38,9 +38,16 @@
             </div>
 
 
-            <div class="contact">
-                <a href="mailto:support@aliassafiart.com" class="submit-button">Send Email</a>
-            </div>
+            <form action="/contact/support" method="post">
+                <h4 class="contact-input-title">Contact</h4>
+                <input type="text" name="firstName" class="form-input form-input-first" placeholder="First Name" required autocomplete="on"/>
+                <input type="text" name="lastName" class="form-input" placeholder="Last Name" required autocomplete="on"/>
+                <input type="email" name="email" class="form-input form-input-last" placeholder="Email Address" required autocomplete="on"/>
+                <h4 class="contact-input-title">Message</h4>
+                <input type="text" name="subject" class="form-input form-input-first" placeholder="Subject" required autocomplete="on"/>
+                <textarea class="form-input form-input-last" name="message" id="contact-textarea" cols="30" rows="10" placeholder="e. g. something wrong with website." required></textarea>
+                <button type="submit" class="submit-button">Send</button>
+            </form>
 
 
             <%- include('partials/socialMedia.ejs') %>
