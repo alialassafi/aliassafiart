@@ -101,6 +101,9 @@ li {
     margin: 1rem auto;
 }
 
+textarea {
+    font-family: Avenir, Montserrat, sans-serif;
+}
 
 @media only screen and (max-width: 700px) {
     h1 {
