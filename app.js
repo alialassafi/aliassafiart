@@ -202,9 +202,9 @@ app.get('/newsletter/confirm/:subscriberID', (req, res) => {
     con.query(sql, (err, result) => {
         if (err) throw err;
         if (err) {
-            res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To confirm your email. If you think this should not happen, please contact us and report this issue." });
+            res.render('emailSubRes.ejs', { status: "Failed To Confirm Your Email!", description: "If you think this should not happen, please contact us and report this issue." });
         } else {
-            res.render('emailSubRes.ejs', { status: "Success!", description: "Successfully Confirmed Your Email!" });
+            res.render('emailSubRes.ejs', { status: "Successfully Confirmed Your Email!", description: "Exciting Content Awaits!" });
         }
     })
 });
@@ -221,9 +221,9 @@ app.route('/newsletter/unsubscribe/imsureiwanttosubscribe')
         con.query(sql, (err, result) => {
             if (err) throw err;
             if (err) {
-                res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Unsubscribe From Newsletter. If you think this should not happen, please contact us and report this issue." });
+                res.render('emailSubRes.ejs', { status: "Failed To Unsubscribe From Newsletter!", description: "If you think this should not happen, please contact us and report this issue." });
             } else {
-                res.render('emailSubRes.ejs', { status: "Success!", description: "Successfully Unsubscribed From Newsletter" });
+                res.render('emailSubRes.ejs', { status: "Successfully Unsubscribed From Newsletter", description: "Please contact us and tell us what is wrong." });
             }
         })
     })
@@ -265,7 +265,7 @@ app.post('/contact/support', (req, res) => {
         transport.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log(error);
-                res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Send Message. If you think this should not happen, please contact us and report this issue." });
+                res.render('emailSubRes.ejs', { status: "Failed To Send Message", description: "If you think this should not happen, please contact us and report this issue." });
             }
             console.log('Message sent: %s', info.messageId);
         });
@@ -274,7 +274,7 @@ app.post('/contact/support', (req, res) => {
 
     sendEmail();
 
-    res.render('emailSubRes.ejs', { status: "Success!", description: "Message Sent Successfully" });
+    res.render('emailSubRes.ejs', { status: "Message Sent Successfully!", description: "We will get back to you soon." });
 
 });
 
