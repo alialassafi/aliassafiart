@@ -157,11 +157,11 @@ app.post("/newsletter", function (req, res) {
             con.query(sql, (err, result) => {
                 if (err) throw err;
                 if (err) {
-                    res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Sign You Up For The Newsletter. If you think this should not happen, please contact us and report this issue." });
+                    res.render('emailSubRes.ejs', { status: "Failure!", description: "If you think this should not happen, please contact us and report this issue." });
                 } else {
                     console.log('1 record updated');
                     sendEmail(email, "Welcome", `https://aliassafiart.com/newsletter/confirm/${subscriberID}`);
-                    res.render('emailSubRes.ejs', { status: "Updated!", description: `Successfully Updated Your Info! <br> Please Check Your Email To Confirm Subscription` });
+                    res.render('emailSubRes.ejs', { status: "Updated Your Info!", description: "Please Check Your Email To Confirm Subscription" });
                 }
             });
         } else {
@@ -169,7 +169,7 @@ app.post("/newsletter", function (req, res) {
             con.query(sql, function (err, result) {
                 if (err) throw err;
                 if (err) {
-                    res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Sign You Up For The Newsletter. If you think this should not happen, please contact us and report this issue." });
+                    res.render('emailSubRes.ejs', { status: "Failure!", description: "If you think this should not happen, please contact us and report this issue." });
                 } else {
                     console.log("1 record inserted");
                     let sql = "SELECT id FROM newsletter WHERE email = " + mysql.escape(email);
@@ -177,10 +177,10 @@ app.post("/newsletter", function (req, res) {
                         let subscriberID = resultID[0].id;
                         if (err) throw err;
                         if (err) {
-                            res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Sign You Up For The Newsletter. If you think this should not happen, please contact us and report this issue." });
+                            res.render('emailSubRes.ejs', { status: "Failure!", description: "If you think this should not happen, please contact us and report this issue." });
                         } else {
                             sendEmail(email, "Welcome", `https://aliassafiart.com/newsletter/confirm/${subscriberID}`);
-                            res.render('emailSubRes.ejs', { status: "Success!", description: `Successfully Subscribed To Newsletter! <br> Please Check Your Email To Confirm Subscription` });
+                            res.render('emailSubRes.ejs', { status: "Successfully Subscribed!", description: "Please Check Your Email To Confirm Subscription" });
 
                         }
                     })
