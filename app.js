@@ -161,7 +161,7 @@ app.post("/newsletter", function (req, res) {
                 } else {
                     console.log('1 record updated');
                     sendEmail(email, "Welcome", `https://aliassafiart.com/newsletter/confirm/${subscriberID}`);
-                    res.render('emailSubRes.ejs', { status: "Updated!", description: "Successfully Updated Your Info" });
+                    res.render('emailSubRes.ejs', { status: "Updated!", description: `Successfully Updated Your Info! <br> Please Check Your Email To Confirm Subscription` });
                 }
             });
         } else {
@@ -180,7 +180,7 @@ app.post("/newsletter", function (req, res) {
                             res.render('emailSubRes.ejs', { status: "Failure!", description: "Failed To Sign You Up For The Newsletter. If you think this should not happen, please contact us and report this issue." });
                         } else {
                             sendEmail(email, "Welcome", `https://aliassafiart.com/newsletter/confirm/${subscriberID}`);
-                            res.render('emailSubRes.ejs', { status: "Success!", description: "Successfully Subscribed To My Newsletter!" });
+                            res.render('emailSubRes.ejs', { status: "Success!", description: `Successfully Subscribed To Newsletter! <br> Please Check Your Email To Confirm Subscription` });
 
                         }
                     })
