@@ -777,8 +777,7 @@ input:focus::placeholder {
 .form-input {
     display: block;
     margin: auto;
-    min-width: 40%;
-    max-width: 75%;
+    width: 70%;
     padding: 1rem;
     background-color: rgb(255, 249, 243);
     border-left: 2px solid #0b1731;
@@ -811,8 +810,7 @@ input:focus::placeholder {
 .submit-button {
     font-weight: bold;
     text-decoration: none;
-    min-width: 10rem;
-    max-width: fit-content;
+    width: 12rem;
     padding: 0 2rem;
     display: flex;
     vertical-align: center;
@@ -857,8 +855,7 @@ input:focus::placeholder {
 .contact-input-title {
     display: block;
     margin: 2rem auto;
-    min-width: 40%;
-    max-width: 50%;
+    width: 70%;
     padding: 1rem;
     font-size: 1rem;
     text-align: left;
@@ -866,7 +863,6 @@ input:focus::placeholder {
 
 #contact-textarea {
     resize: vertical;
-    padding: 1.66rem;
 }
 
 @media only screen and (max-width: 700px) {
