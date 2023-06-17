@@ -789,6 +789,16 @@ input:focus::placeholder {
     text-align: left;
 }
 
+.form-input-first {
+    border-top: 2px solid #0B1731;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.form-input-last {
+    border-bottom: 2px solid #0B1731;
+    border-radius: 0 0 1rem 1rem;
+}
+
 .form-input:active {
     outline: none;
 }
@@ -823,16 +833,6 @@ input:focus::placeholder {
     border-radius: 2rem 2rem 2rem 2rem;
 }
 
-.form-input-first {
-    border-top: 2px solid #0B1731;
-    border-radius: 1rem 1rem 0 0;
-}
-
-.form-input-last {
-    border-bottom: 2px solid #0B1731;
-    border-radius: 0 0 1rem 1rem;
-}
-
 @media only screen and (max-width: 700px) {
     .submit-button {
         padding: 0 1rem;
@@ -861,6 +861,11 @@ input:focus::placeholder {
     padding: 1rem;
     font-size: 1rem;
     text-align: left;
+}
+
+#contact-textarea {
+    resize: vertical;
+    padding: 1.66rem;
 }
 
 @media only screen and (max-width: 700px) {
