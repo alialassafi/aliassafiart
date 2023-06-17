@@ -787,6 +787,7 @@ input:focus::placeholder {
     border-bottom: 1px solid rgba(11, 23, 49, 0.4);
     font-size: 1rem;
     text-align: left;
+    outline: none;
 }
 
 .form-input-first {
