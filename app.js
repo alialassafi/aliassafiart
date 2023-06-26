@@ -27,7 +27,7 @@ var con = mysql.createConnection({
     user: process.env.DATABASEUSER,
     password: process.env.DATABASEPASSWORD,
     database: process.env.DATABASE,
-    port: '3306',
+    port: '2083',
     multipleStatements: true
 });
 
